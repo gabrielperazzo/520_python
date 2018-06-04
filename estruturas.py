@@ -2,10 +2,12 @@
 
 #Capturar dois valores numérios do terminal e compará-los
 
-for i in 'Teste de for i':
+for i in range(100):
+    i = i*2
     print(i)
 
 exit()
+
 num1 = int(input('Digite um número: '))
 num2 = int(input('Digite outro número: '))
 
