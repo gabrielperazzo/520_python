@@ -2,6 +2,13 @@
 
 #Capturar dois valores numérios do terminal e compará-los
 
+novo_nome = input('Digite um novo nome: ')
+nomes = ['Tricia', 'Maisa', 'Andreia']
+nomes.append(novo_nome)
+print(nomes)
+
+exit()
+
 nomes = 'abcdefghijklmnopqrs'
 nome = input('Digite uma letra qualquer: ')
 
