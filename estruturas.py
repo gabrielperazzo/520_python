@@ -2,6 +2,10 @@
 
 #Capturar dois valores numérios do terminal e compará-los
 
+for i in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]:
+    print(i)
+
+exit()
 num1 = int(input('Digite um número: '))
 num2 = int(input('Digite outro número: '))
 
