@@ -2,6 +2,20 @@
 
 #Capturar dois valores numérios do terminal e compará-los
 
+i = 0
+while i < 10:
+    print("{0} Tome muito líquido".format(i))
+    i = i + 1
+
+exit()
+
+nmax = int(input("Digite a quantidade desejada: "))
+
+for i in enumerate(range(nmax), start = 100):
+    print(i)
+
+exit()
+
 for i in range(100):
     i = i*2
     print(i)
