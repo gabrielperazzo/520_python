@@ -2,6 +2,10 @@
 
 #Capturar dois valores numérios do terminal e compará-los
 
+nomes = ('Nome A', 'Nome B', 'Nome C', 'Nome D', 'Nome E')
+if 'Nome D' in nomes:
+    print('Achei o Nome D')
+
 i = 0
 while i < 10:
     print("{0} Tome muito líquido".format(i))
