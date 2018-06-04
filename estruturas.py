@@ -1,6 +1,12 @@
 #!/usr/bin/python3
 
-#Capturar dois valores numérios do terminal e compará-los
+nome_banda = input('Digite o nome de uma banda: ')
+nome_musica = input('Digite o nome de uma música: ')
+
+music = {"nome" : nome_banda , "musica" : nome_musica}
+print(music["musica"])
+
+exit()
 
 novo_nome = input('Digite um novo nome: ')
 nomes = ['Tricia', 'Maisa', 'Andreia']
