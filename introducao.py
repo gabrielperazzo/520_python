@@ -7,5 +7,4 @@ s = '''Primeiro valor digitado {0:.>10}
 Segundo valor digitado {1:.>11}
 Resultado da soma: {2:.>15}'''
 
-print(s.format(num1, num2, num3))print("Oi Github")
-print("Oi Github")
+print(s.format(num1, num2, num3))
