@@ -1,10 +1,35 @@
 #!/usr/bin/python3
 
+bands = []
+
+while True:
+    try:
+        band = {'nome' : '' , 'musica' : []}
+        band['nome'] = input('Digite o nome de uma banda: ')
+        while True:
+            try:
+                band['musica'].append(input('Digite o nome de outra música: '))
+            except KeyboardInterrupt:
+                break
+        bands.append(band)
+    except KeyboardInterrupt:
+        break
+print(bands)
+
+exit()
+
+banda_new = input('Digite o nome de uma banda: ')
+
+bands = [{'banda' : 'Bon Jovi', 'musicas' : ['Always' , 'Bad Medicine' , "It's my life"]}]
+bands.append({banda_new})
+print(bands)
+exit() 
+
 nome_banda = input('Digite o nome de uma banda: ')
 nome_musica = input('Digite o nome de uma música: ')
 
 music = {"nome" : nome_banda , "musica" : nome_musica}
-print(music["musica"])
+print(music)
 
 exit()
 
