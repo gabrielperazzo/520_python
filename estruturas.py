@@ -2,6 +2,16 @@
 
 #Capturar dois valores numérios do terminal e compará-los
 
+nomes = 'abcdefghijklmnopqrs'
+nome = input('Digite uma letra qualquer: ')
+
+if nome.lower() in nomes:
+    print('Achei o {0}'.format(nome))
+else:
+    print('Não achei o {0}'.format(nome))
+
+exit()
+
 nomes = ('Nome A', 'Nome B', 'Nome C', 'Nome D', 'Nome E')
 if 'Nome D' in nomes:
     print('Achei o Nome D')
