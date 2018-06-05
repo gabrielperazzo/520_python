@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 
-for i in range(0,10):
-    i = i * 2 
-    print(i)
+import random
 
 def soma(a, b):
     return a + b
@@ -23,6 +21,15 @@ def divide(a, b):
     return a / b
 
 print(divide(5, 10))
+
+def satanas(a):
+    return (soma(a[0], a[1]) + subtrai(a[2], a[3]) + multiplica(a[4], a[5]) + divide(a[6], a[7]))
+
+lista = []
+for i in range(8):
+    lista.append(random.randint(1,100))
+
+print(satanas(lista))
 
 #def textao_do_facebook(nome):
 #    textao = '''Nunca é {0} demais lembrar o peso e o significado destes problemas, uma vez que a determinação clara de objetivos talvez venha a ressaltar a relatividade das novas proposições. Percebemos, cada vez mais, que o acompanhamento das preferências de consumo oferece uma interessante oportunidade para verificação das condições inegavelmente apropriadas. Por conseguinte, a adoção de políticas descentralizadoras acarreta um processo de reformulação e modernização das regras de conduta normativas. 
