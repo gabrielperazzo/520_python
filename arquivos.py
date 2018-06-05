@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-f = open('usuarios.csv' , 'r+')
+import random
 
-for l in sorted(f.readlines(), reverse=True):
-    print(l.title())
+f = open('usuarios.csv' , 'a')
+#linhas = f.readlines()
+#f.close
 
 nome = input('Digite um nome: ')
-f.write(nome + '\n')
-
+f.write(str(random.randint(0,100)) + ',' + nome + '\n')
