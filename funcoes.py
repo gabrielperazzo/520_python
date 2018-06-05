@@ -1,9 +1,28 @@
 #!/usr/bin/python3
 
-def soma(a, b):
-    print(a + b)
+for i in range(0,10):
+    i = i * 2 
+    print(i)
 
-soma(5, 10)    
+def soma(a, b):
+    return a + b
+
+print(soma(5, 10))
+
+def subtrai(a, b):
+    return a - b
+
+print(subtrai(5, 10))
+
+def multiplica(a, b):
+    return a * b
+
+print(multiplica(5, 10))
+
+def divide(a, b):
+    return a / b
+
+print(divide(5, 10))
 
 #def textao_do_facebook(nome):
 #    textao = '''Nunca é {0} demais lembrar o peso e o significado destes problemas, uma vez que a determinação clara de objetivos talvez venha a ressaltar a relatividade das novas proposições. Percebemos, cada vez mais, que o acompanhamento das preferências de consumo oferece uma interessante oportunidade para verificação das condições inegavelmente apropriadas. Por conseguinte, a adoção de políticas descentralizadoras acarreta um processo de reformulação e modernização das regras de conduta normativas. 
