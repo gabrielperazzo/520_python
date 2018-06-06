@@ -1,5 +1,14 @@
 #!/usr/bin/python3
 
+def minusculizar(i):
+    return i.lower()
+
+lista = ['a','A','B','C','D']
+print(lista)
+print(sorted(lista))
+print(sorted(lista, key=minusculizar))
+exit()
+
 f = open('usuarios.csv', 'r')
 usuarios = [u.strip().split(',') for u in f.readlines()]
 f.close()
