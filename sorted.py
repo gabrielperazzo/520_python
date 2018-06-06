@@ -9,6 +9,12 @@ print(sorted(lista))
 print(sorted(lista, key=minusculizar))
 
 f = open('usuarios.csv', 'r')
+
+for usuarios in f.readlines():
+    if 'a' in usuarios.lower():
+        print (usuarios.split(','))
+exit()
+
 usuarios = [l for l in [u.strip().split(',') for u in f.readlines()] if l[1].lower().startswith('a')] 
 f.close()
 
