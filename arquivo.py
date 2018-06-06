@@ -13,8 +13,15 @@ class Arquivo:
             if i == n:
                 return l.strip()
 
-arquivo = Arquivo('usuarios.csv')
-letras = Arquivo('letras.txt')
-print(arquivo.nome, arquivo.linhas)
-print(letras.nome, letras.linhas)
-print(arquivo.ler(12))
+    def escrever(self,s):
+        self.arquivo.close()
+        self.arquivo = open(self.nome, 'a')
+        self.arquivo.write(s + '\n')
+
+#arquivo = Arquivo('usuarios.csv')
+#print(arquivo.nome, arquivo.linhas)
+#print(arquivo.ler(12))
+#arquivo.escrever('5,Dragonfly')
+
+#letras = Arquivo('letras.txt')
+#print(letras.nome, letras.linhas)
