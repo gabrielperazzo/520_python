@@ -20,4 +20,9 @@ def to_dict(i):
 usuarios = list(map(to_dict, usuarios))
 
 for i in sorted(usuarios, key=lambda u : u['sobrenome']):
-    print(i)
+    s = '''
+    ID:{0:.>21}
+    NOME:{1:.>19}
+    SOBRENOME:{2:.>14}
+    ------------------------'''
+    print(s.format(i['id'],i['nome'],i['sobrenome']))
