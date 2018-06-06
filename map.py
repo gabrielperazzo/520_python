@@ -8,7 +8,9 @@ f = open('usuarios.csv', 'r')
 usuarios = [u.strip().split(',') for u in f.readlines()]
 
 def to_dict(i):
-    dic = {"id" : i[0] , "nome" : i[1] , "sobrenome" : random.choice(sobrenomes)}
+    dic = {"id" : i[0]} 
+    dic["nome"] = i[1]
+    dic["sobrenome"] = random.choice(sobrenomes)
     return dic
 
 #def add_sobrenome(i):
@@ -17,5 +19,5 @@ def to_dict(i):
 
 usuarios = list(map(to_dict, usuarios))
 
-for i in usuarios:
+for i in sorted(usuarios, key=lambda u : u['sobrenome']):
     print(i)
