@@ -7,17 +7,16 @@ lista = ['a','A','B','C','D']
 print(lista)
 print(sorted(lista))
 print(sorted(lista, key=minusculizar))
-exit()
 
 f = open('usuarios.csv', 'r')
 usuarios = [u.strip().split(',') for u in f.readlines()]
 f.close()
 
-def ordenar_pelo_id(u):
-    u[0] = int(u[0])
-    return u
+def ordenar_pelo_nome(i):
+    i[1] = str(i[1])
+    return i[1].lower()
 
-for u in sorted(usuarios, key=ordenar_pelo_id):
+for u in sorted(usuarios, key=ordenar_pelo_nome):
     print(u)
 
 exit()
