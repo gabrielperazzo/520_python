@@ -19,7 +19,10 @@ while True:
         elif data == '2':
             a = input('Digite o endereço do servidor: ')
             cmd = run(['ping' , '-c4', a], stdout=PIPE)
-            print(cmd.stdout.decode('utf-8'))
+            if cmd.returncode == 0:
+                print('Servidor online!')
+            else:
+                print('Servidor offline!')
         else:
             o = input('Deseja realmente estragar a máquina? [s/n]')
             if o == 's':
