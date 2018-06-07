@@ -8,23 +8,21 @@ class Arquivo:
         self.linhas = len(self.arquivo.readlines())
         self.arquivo.seek(0)
 
-    def ler(self, n):
-        self.arquivo.close()
-        self.arquivo = open(self.nome, 'r')
+    def ler(self, n): #n é a linha que eu quero printar, 3
+        self.reabrir('r')
         for i, l in enumerate(self.arquivo, start=1):
             if i == n:
                 return l.strip()
 
-    def escrever(self,s):
-        self.arquivo.close()
-        self.arquivo = open(self.nome, 'a')
+    def escrever(self, s): #1,Nome
+        self.reabrir('a')
         self.arquivo.write(s + '\n')
         self.linhas += 1
 
-#arquivo = Arquivo('usuarios.csv')
-#print(arquivo.nome, arquivo.linhas)
-#print(arquivo.ler(12))
-#arquivo.escrever('5,Dragonfly')
-
-#letras = Arquivo('letras.txt')
-#print(letras.nome, letras.linhas)
+    def reabrir(self, m):
+        if m == self.arquivo.mode:
+            if self.arquivo.mode == 'r':
+                self.arquivo.seek(0)
+        else:
+            self.arquivo.close()
+            self.arquivo = open(self.nome, m)

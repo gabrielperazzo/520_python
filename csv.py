@@ -6,10 +6,10 @@ class CSV(Arquivo):
     
     def __init__(self, nome):
         if not nome.lower().endswith('.csv'):
-            print('O arquivo não é . csv')
-            return
+           print('O arquivo não é .csv')
+           return
         else:
-            super(CSV, self).__init__(nome)
+           super(CSV, self).__init__(nome)
 
     def escrever(self, s):
         if type(s) is not tuple:
@@ -21,7 +21,7 @@ class CSV(Arquivo):
         if type(s[0]) is not int:
             print('s[0] não é inteiro')
             return
-        if not s[1].strip:
+        if not s[1].strip():
             print('s[1] não pode ser vazio')
             return
         super(CSV, self).escrever('{0},{1}'.format(s[0],s[1]))
@@ -30,9 +30,12 @@ class CSV(Arquivo):
         return '{0} - {1} lines'.format(self.nome, self.linhas)
 
     def __getitem__(self, i):
-        return 'O índice {0} foi invocado'.format(i)
+        if type(i) is int:
+            return self.ler(i)
+        i = i.lower()
+        return [l.strip() for l in self.arquivo if i in l.lower()]
 
 csv = CSV('usuarios.csv')
-#csv.escrever((66, 'kingsman'))
+#csv.escrever((99, 'Boleslau'))
 #print(csv.ler(5))
-print(csv[10])
+print(csv['BOLESLAU'])
