@@ -9,6 +9,8 @@ class Arquivo:
         self.arquivo.seek(0)
 
     def ler(self, n):
+        self.arquivo.close()
+        self.arquivo = open(self.nome, 'r')
         for i, l in enumerate(self.arquivo, start=1):
             if i == n:
                 return l.strip()
@@ -17,6 +19,7 @@ class Arquivo:
         self.arquivo.close()
         self.arquivo = open(self.nome, 'a')
         self.arquivo.write(s + '\n')
+        self.linhas += 1
 
 #arquivo = Arquivo('usuarios.csv')
 #print(arquivo.nome, arquivo.linhas)
