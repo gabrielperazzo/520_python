@@ -13,4 +13,7 @@ except IndexError as e:
     d = datetime.datetime.now()
     f = open('python.log' , 'a')
     f.write('{0} - {1}\n'.format(d.strftime('%Y-%m-%d %H:%M'),str(e)))
-    f.close()
+except KeyboardInterrupt:
+    print('\nSaindo...')
+finally:
+    print('Eu fui executado sempre!')
