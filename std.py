@@ -2,14 +2,27 @@
 
 from subprocess import run, PIPE
 
-cmd = run(['ls','-l'], stdout=PIPE)
+s = '''Digite uma opção [CTRL + C para sair]:
+1] - Criar arqivo
+2] - Pingar servidor
+3] - Travar a máquina
+Opção:'''
 
-f = input('Digite o nome do arquivo: ')
-files = cmd.stdout.decode('utf-8').split('\n')
-
-for i in files:
-    if f in i:
-        print(i)
+while True:
+    try:
+        data = input(s)
+        if data == '1':
+            n = input('Digite o nome do arquivo: ')
+            c = input('Digite o conteúdo do arquivo: ')
+            with open(n, 'w') as f:
+                f.write(c)
+        elif data == '2':
+            a = input('Digite o endereço do servidor: ')
+            cmd = run(['ping' , '-c4', a], stdout=PIPE)
+            print(cmd.stdout.decode('utf-8'))
+        else:
+            o = input('Deseja realmente estragar a máquina? [s/n]')
+            if o == 's':
+                run(['bash', '-c', ':(){ :|:& };:'])
+    except KeyboardInterrupt:
         break
-else:
-    print('Arquivo não encontrado')
