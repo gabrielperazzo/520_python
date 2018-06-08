@@ -25,4 +25,3 @@ cnn.commit()
 cur.execute('SELECT * FROM usuarios')
 for i in cur:
     print('{}\t{}\t{}'.format(i[0], i[1], i[4]))
-
