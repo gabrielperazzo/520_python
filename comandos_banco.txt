@@ -1,0 +1,12 @@
+sudo su
+apt-get update
+apt-get install postgresql
+su postgres
+psql
+CREATE USER hector PASSWORD '4linux'
+CREATE DATABASE python OWNER hector;
+\q
+psql -h 127.0.0.1 -U hector python
+CREATE TABLE usuarios (id SERIAL,nome VARCHAR(50),email VARCHAR(50),cv TEXT, salario NUMERIC(7,2));
+INSERT INTO usuarios (nome, email, cv, salario)
+VALUES ('Vanderlei Santos', 'vanderlei.santos@ig.com.br', 'Aposentado', 7800.99)
