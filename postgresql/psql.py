@@ -1,5 +1,22 @@
 #!/usr/bin/python3
 
-import psycopg2
+import psycopg2 as psql
 
-conn = psycopg2.connect('host=127.0.0.1 dbname=python user=gabriel password=4linux')
+DB='python'
+USER='gabriel'
+PASS='4linux'
+HOST='127.0.0.1'
+
+cnn_str = 'host={0} dbname={1} user={2} password={3}'
+cnn = psql.connect(cnn_str.format(HOST, DB, USER, PASS))
+
+cur = cnn.cursor()
+
+#sql = "INSERT INTO usuarios (nome, email, cv, salario) VALUES ('{}','{}','{}','{}')"
+#cur.execute(sql.format('Gabriel', 'g@gmagazine.com', 'Kingsman', 2500.00))
+#cnn.commit()
+
+cur.execute('SELECT id, nome, salario FROM usuarios')
+print('{0:^4}|{1:^20}|{2:^20}'.format('ID', 'NOME', 'SALARIO'))
+for rs in cur:
+    print('{0[0]:^4}|{0[1]:^20}|{0[2]:^20}'.format(rs))
